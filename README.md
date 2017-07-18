@@ -17,12 +17,36 @@ Lorem Ipsum
 
 ## Class decorators
 Lorem ipsum...
+- Log
+- Analytics
+- deprecated
+- Lorem
 
 ## Method decorators
 Lorem ipsum...
+- Log
+- Cache (w/o expiration)
+- Memoization
+- deprecated
+- debounce(wait)
+- throttle(wait)
+- profile (internamente, console.profile y console.profileEnd)
+- time (internamente, console.time y console.timeEnd)
 
 ## Property decorators
 Lorem ipsum...
+- Validators: max/min-length, readonly, readonly+callback, onAccess, onUpdate, onNull, type verification
+            contains('string'), isInt, isDate, isEmail, eachIsString (para arrays), maxLength(size, eachType),
+            isAfter(date), isBefore(date), isAlphanumeric, isBoolean, isISBN, isLowercase, isNull, isUppercase, 
+            max/min-value
+- NonWritable, NonConfigurable
 
 ## Parameter decorators
 Lorem ipsum...
+- Validators
+
+# Work progress
+The work progress and the decorators finished will be registered here, in this section.
+
+# Contributing
+If you want to contribute, please, open an issue asking for a new feature or a PR making your suggestion.
