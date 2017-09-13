@@ -1,0 +1,37 @@
+{
+  "name": "typescript-decorators",
+  "version": "1.0.0",
+  "description": "Set of common and userful Typescript decorators.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "build": "npm run build:dist && npm run build:examples",
+    "build:dist": "./node_modules/.bin/tsc",
+    "build:examples": "./node_modules/.bin/tsc -p tsconfig.examples.json",
+    "clean": "rimraf -rf dist dist-examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/semagarcia/typescript-decorators.git"
+  },
+  "author": "Sema García",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/semagarcia/typescript-decorators/issues"
+  },
+  "homepage": "https://github.com/semagarcia/typescript-decorators#readme",
+  "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.43",
+    "@types/node": "^8.0.28",
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3",
+    "reflect-metadata": "^0.1.10",
+    "rimraf": "^2.6.2",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.5.2"
+  }
+}
