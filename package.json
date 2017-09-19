@@ -8,7 +8,7 @@
     "example": "examples"
   },
   "scripts": {
-    "build": "npm run build:dist && npm run build:examples",
+    "build": "npm run clean && npm run build:dist && npm run build:examples",
     "build:dist": "./node_modules/.bin/tsc",
     "build:examples": "./node_modules/.bin/tsc -p tsconfig.examples.json",
     "clean": "rimraf -rf dist dist-examples"
