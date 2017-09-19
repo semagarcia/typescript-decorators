@@ -33,7 +33,6 @@
     "typescript": "^2.5.2"
   },
   "dependencies": {
-    "chalk": "^2.1.0",
     "reflect-metadata": "^0.1.10"
   }
 }
