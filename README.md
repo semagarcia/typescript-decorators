@@ -21,7 +21,7 @@ Lorem ipsum...
 
 ## Method decorators
 Lorem ipsum...
-- [ ] Log
+- [X] Logger
 - [ ] Cache (w/o expiration)
 - [ ] Memoization
 - [ ] deprecated
