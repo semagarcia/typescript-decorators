@@ -12,13 +12,13 @@ export interface LoggerClassAnnotation {
  */
 export function LoggerClass(loggerOptions: LoggerClassAnnotation = {}): ClassDecorator {
     // Check logger options
-    const msgTrace = loggerOptions.messageOnLog || 'New instance created of class';
+    const msgTrace = (loggerOptions && loggerOptions.messageOnLog) || 'New instance created of class';
     const prefix = (loggerOptions.prefix) ? (loggerOptions.prefix + ' ') : '';
-    const timestamp = !!loggerOptions.timestamp;
+    const timestamp = loggerOptions && !!loggerOptions.timestamp;
     let ts: string = '';
     if(timestamp) {
         let now = new Date();
-        ts = ts.concat('[')
+        ts = ts.concat('[') 
             .concat(`${now.getDate()}/${now.getMonth()+1}/${now.getFullYear()}`)
             .concat(' - ')
             .concat(`${now.getHours()}:${now.getMinutes()}`)
