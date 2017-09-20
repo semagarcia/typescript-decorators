@@ -17,10 +17,7 @@ Lorem Ipsum
 
 ## Class decorators
 Lorem ipsum...
-- [ ] Mercury
-- [ ] Analytics
-- [ ] deprecated
-- [ ] Lorem
+- [X] Logger
 
 ## Method decorators
 Lorem ipsum...
