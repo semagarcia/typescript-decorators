@@ -55,7 +55,8 @@ Lorem ipsum...
    * [ ] isLowercase
    * [ ] isNull
    * [ ] isUppercase
-   * [ ] max/min-value
+   * [X] Max
+   * [X] Min
 - [ ] NonWritable
 - [ ] NonConfigurable
 
