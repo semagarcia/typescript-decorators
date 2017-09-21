@@ -8,7 +8,8 @@
     "example": "examples"
   },
   "scripts": {
-    "build": "npm run clean && npm run transpile",
+    "build": "npm run clean && npm run transpile && npm run example-executor",
+    "example-executor": "node example-executor.js",
     "transpile": "./node_modules/.bin/tsc",
     "clean": "rimraf -rf dist dist-examples"
   },
