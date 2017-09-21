@@ -33,6 +33,8 @@
     "typescript": "^2.5.2"
   },
   "dependencies": {
+    "figlet": "^1.2.0",
+    "inquirer": "^3.3.0",
     "reflect-metadata": "^0.1.10"
   }
 }
