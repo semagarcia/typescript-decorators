@@ -8,6 +8,11 @@ export interface RangeOptions {
 }
 
 /**
+ * Decorator to assert that a property will only have a value between a min and a max value
+ * 
+ * @export
+ * @param {RangeOptions} rangeOptions 
+ * @returns 
  */
 export function Range(rangeOptions: RangeOptions) {
     // Check conditions; in case of error an exception will be thrown
@@ -34,6 +39,11 @@ export function Range(rangeOptions: RangeOptions) {
     }
 }
 
+/**
+ * Check if the annotations provided are valid or not
+ * 
+ * @param {any} opts 
+ */
 function checkRangeOptions(opts) {
     if(!opts) {
         throw new Error('No range options provided');
