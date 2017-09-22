@@ -57,6 +57,7 @@ Lorem ipsum...
    * [ ] isUppercase
    * [X] Max
    * [X] Min
+   * [X] Range
 - [ ] NonWritable
 - [ ] NonConfigurable
 
