@@ -33,8 +33,8 @@ Lorem ipsum...
 ## Property decorators
 Lorem ipsum...
 - Validators: 
-   * [ ] max-length
-   * [ ] min-length
+   * [ ] MaxLength
+   * [ ] MinLength
    * [ ] readonly
    * [ ] readonly+callback
    * [ ] onAccess
