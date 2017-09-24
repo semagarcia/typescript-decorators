@@ -10,69 +10,83 @@ module.exports = function(config) {
         plugins: [
             "karma-typescript",
             "karma-jasmine",
-            //"karma-mocha-reporter",
-            //"karma-jasmine-html-reporter",
-            //"karma-spec-reporter",
-            //"karma-remap-istanbul",
+            "karma-mocha-reporter",
+            "karma-jasmine-html-reporter",
+            "karma-spec-reporter",
             "karma-chrome-launcher"
         ],
 
         files: [
-            // Decorators
+            // Decorators (and tests if they are in this folder)
             { pattern: "src/**/*.ts" },
 
-            // Tests
-            //{ pattern: "test/**/*.ts" },
-            //{ pattern: "test/logger.spec.ts" },
-            //{ pattern: "src/class-decorators/logger.spec.ts" }
-            //{ pattern: "src/**/*.+(js|ts)" }
-            //{ pattern: "src/**/*.js" },
-            //{ pattern: "test/**/*.js" },
+            // Tests in its own folder. If the tests would be placed in the src folder (next to source files)
+            // this line should be commented (it's enough with the previous one pattern)
+            { pattern: "test/**/*.ts" }
         ],
 
         preprocessors: {
             "**/*.ts": ["karma-typescript"]
-            //"src/**/*.ts": ["karma-typescript"],
-            //"test/**/*.ts": ["karma-typescript"],
-            //"src/**/*.+(js|ts)": ["karma-typescript"],
-            //"src/**/*.js": ["karma-typescript"],
-            //"test/**/*.js": ["karma-typescript"]
         },
 
-        reporters: ["progress", "karma-typescript"],  // dots
+        reporters: ["mocha", "karma-typescript"],  // progress, dots, coverage, html, mocha, kjhtml
 
         browsers: [
-            "Chrome",
-            //"ChromeHeadless"
+            //"Chrome",
+            "ChromeHeadless"
         ],
 
+        port: 9876,
         logLevel: config.LOG_INFO,
         singleRun: true,
         
         karmaTypescriptConfig: {
-            /*transformPath: function(filepath) {
-                console.log('-----> ', filepath);
-                return filepath.replace(/\.(ts|tsx)$/, ".js");
-            },*/
-            /*bundlerOptions: {
-                entrypoints: /\*.spec\.ts$/,
-                emitDecoratorMetadata: true,
-                experimentalDecorators: true,
-                sourceMap: true,
-                transforms: [
-                    require('karma-typescript-es6-transform')()
-                ]
-            },*/
-            /*compilerOptions: {
-                allowJs: true,
-                lib: ['es2016', 'dom'],
-                module: 'commonjs',
-            },*/
-            /*include: [
+            tsconfig: "./tsconfig.test.json",
+            include: [
+                // This line is only needed if the tests are located in its own folder
+                "test/**/*.spec.ts"
+            ],
+            coverageOptions: {
+                // Exclude all .d.ts, .spec.ts and index.ts for coverage report
+                exclude: [/\.(d|spec)\.ts$/i, /index\.ts$/i]
+            },
+            threshold: {
+                // Computed over whole source code base, it means, over the total/global
+                global: {
+                    statements: 75,  // global statements coverage
+                    branches: 70,    // global branches coverage
+                    functions: -50,  // global uncovered functions coverage
+                    lines: 70        // global line coverage
+                },
+                // Thresholds for each file
+                file: {
+                    statements: 75,
+                    branches: 70,
+                    functions: -10,
+                    lines: 70,
+                    overrides: {
+                    // Overrides for specific files
+                    'src/services/offline-manager.service.ts': {
+                        statements: 60,
+                        branches: 60,
+                        functions: -40,
+                        lines: 60
+                    }
+                    }
+                }
+            },
+            reports: {
+                // Define a reporter to see through console, after the test execution, a coverage summary
+                'html': 'coverage',
+                'text-summary': null
+            }
+        },
 
-            ]*/
-            include: ["src/**/*.spec.ts"],
-            tsconfig: "./tsconfig.test.json"
+        remapIstanbulReporter: {
+            reports: {
+                html: 'coverage',
+                lcovonly: './coverage/coverage.lcov'
+            }
         }
     });
 };
