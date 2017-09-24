@@ -11,7 +11,7 @@ const scanExamplesByTypology = (typology) => {
 }
 
 // Show figlet header
-console.log(figlet.textSync('ExampleExecutor', { horizontalLayout: 'default' }));
+console.log(figlet.textSync('Example Executor', { horizontalLayout: 'default' }));
 
 // Launch questions
 inquirer.prompt([
