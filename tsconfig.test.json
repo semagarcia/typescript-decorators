@@ -18,11 +18,9 @@
     ]
   },
   "files": [
-    "./src/index.ts",
-    "./examples/index.ts"
+    "./src/index.ts"
   ],
   "exclude": [
-    //"./node_modules",
-    //"./test/**/*.spec.ts"
+    "./examples/**/*.ts"
   ]
 }
