@@ -1,19 +1,10 @@
 module.exports = function(config) {
     config.set({
-        //basePath: "./",
+        basePath: "./",
 
-        frameworks: [
-            "jasmine", 
-            "karma-typescript"
-        ],
-
-        plugins: [
-            "karma-typescript",
-            "karma-jasmine",
-            "karma-mocha-reporter",
-            "karma-jasmine-html-reporter",
-            "karma-spec-reporter",
-            "karma-chrome-launcher"
+        browsers: [
+            //"Chrome",
+            "ChromeHeadless"
         ],
 
         files: [
@@ -25,21 +16,11 @@ module.exports = function(config) {
             { pattern: "test/**/*.ts" }
         ],
 
-        preprocessors: {
-            "**/*.ts": ["karma-typescript"]
-        },
-
-        reporters: ["mocha", "karma-typescript"],  // progress, dots, coverage, html, mocha, kjhtml
-
-        browsers: [
-            //"Chrome",
-            "ChromeHeadless"
+        frameworks: [
+            "jasmine", 
+            "karma-typescript"
         ],
 
-        port: 9876,
-        logLevel: config.LOG_INFO,
-        singleRun: true,
-        
         karmaTypescriptConfig: {
             tsconfig: "./tsconfig.test.json",
             include: [
@@ -82,11 +63,32 @@ module.exports = function(config) {
             }
         },
 
+        logLevel: config.LOG_INFO,
+
+        plugins: [
+            "karma-typescript",
+            "karma-jasmine",
+            "karma-mocha-reporter",
+            "karma-jasmine-html-reporter",
+            "karma-spec-reporter",
+            "karma-chrome-launcher"
+        ],
+
+        port: 9876,
+
+        preprocessors: {
+            "**/*.ts": ["karma-typescript"]
+        },
+
         remapIstanbulReporter: {
             reports: {
                 html: 'coverage',
                 lcovonly: './coverage/coverage.lcov'
             }
-        }
+        },
+
+        reporters: ["mocha", "karma-typescript"],  // progress, dots, coverage, html, mocha, kjhtml
+
+        singleRun: true
     });
 };
