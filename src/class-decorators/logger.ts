@@ -1,6 +1,11 @@
 export interface LoggerClassAnnotation {
+    /** Message to write in each trace */
     messageOnLog?: string;
+
+    /** String to prepend to the log trace */
     prefix?: string;
+
+    /** Flag to either insert or not a timestamp value in format [dd/MM/YYYY - hh:mm:ss] */
     timestamp?: boolean;
 }
 
@@ -13,7 +18,7 @@ export interface LoggerClassAnnotation {
 export function LoggerClass(loggerOptions: LoggerClassAnnotation = {}): ClassDecorator {
     // Check logger options
     const msgTrace = (loggerOptions && loggerOptions.messageOnLog) || 'New instance created of class';
-    const prefix = (loggerOptions.prefix) ? (loggerOptions.prefix + ' ') : '';
+    const prefix = (loggerOptions && loggerOptions.prefix) ? (loggerOptions.prefix + ' ') : '';
     const timestamp = loggerOptions && !!loggerOptions.timestamp;
     let ts: string = '';
     if(timestamp) {
