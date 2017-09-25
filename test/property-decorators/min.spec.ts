@@ -9,8 +9,9 @@ describe('LoggerMethod decorator', () => {
         }
 
         let testClass = new TestClassMinValue();
-        testClass.myNumber = 5;
-        expect(testClass.myNumber).toEqual(5);
+        let valueToAssign = 5;
+        testClass.myNumber = valueToAssign;
+        expect(testClass.myNumber).toEqual(valueToAssign);
     });
 
     it('should assign null to the property (default value, protect = false) without throw an exception', () => {
@@ -31,9 +32,10 @@ describe('LoggerMethod decorator', () => {
         }
 
         let testClass = new TestClassMinValue();
-        testClass.myNumber = 10;
+        let validValueToAssign = 10;
+        testClass.myNumber = validValueToAssign;
         testClass.myNumber = 3;
-        expect(testClass.myNumber).toEqual(10);
+        expect(testClass.myNumber).toEqual(validValueToAssign);
     });
 
     it('should throw an error when the value assigned is invalid', () => {
