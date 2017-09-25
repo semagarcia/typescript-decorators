@@ -1,3 +1,5 @@
+import { printTimeStamp } from './../utils';
+
 export interface LoggerClassAnnotation {
     /** Message to write in each trace */
     messageOnLog?: string;
@@ -22,12 +24,7 @@ export function LoggerClass(loggerOptions: LoggerClassAnnotation = {}): ClassDec
     const timestamp = loggerOptions && !!loggerOptions.timestamp;
     let ts: string = '';
     if(timestamp) {
-        let now = new Date();
-        ts = ts.concat('[') 
-            .concat(`${now.getDate()}/${now.getMonth()+1}/${now.getFullYear()}`)
-            .concat(' - ')
-            .concat(`${now.getHours()}:${now.getMinutes()}`)
-            .concat('] ');
+        ts = printTimeStamp();
     }
 
     return function <TFunction extends Function> (target: TFunction): TFunction {
