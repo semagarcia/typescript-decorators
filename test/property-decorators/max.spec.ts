@@ -1,6 +1,6 @@
 import { Max } from './../../src/';
 
-describe('LoggerMethod decorator', () => {
+describe('Max decorator', () => {
 
     it('should assign a valid value (less than max value)', () => {
         class TestClassMaxValue {

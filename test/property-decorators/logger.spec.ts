@@ -1,6 +1,6 @@
 import { LoggerProperty } from './../../src/';
 
-describe('LoggerMethod decorator', () => {
+describe('LoggerProperty decorator', () => {
 
     beforeEach(() => {
         spyOn(console, 'log');

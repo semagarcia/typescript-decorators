@@ -1,6 +1,6 @@
 import { Min } from './../../src/';
 
-describe('LoggerMethod decorator', () => {
+describe('Min decorator', () => {
 
     it('should assign a valid value (greater or equals than min value)', () => {
         class TestClassMinValue {
