@@ -24,7 +24,7 @@ export function LoggerClass(loggerOptions: LoggerClassAnnotation = {}): ClassDec
     const timestamp = loggerOptions && !!loggerOptions.timestamp;
     let ts: string = '';
     if(timestamp) {
-        ts = printTimeStamp();
+        ts = printTimeStamp(new Date());
     }
 
     return function <TFunction extends Function> (target: TFunction): TFunction {

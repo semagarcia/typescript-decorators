@@ -47,7 +47,7 @@ export function LoggerMethod(loggerOptions?: LoggerMethodAnnotation): MethodDeco
 
             let startTime = Date.now();
             if(entryTrace) {
-                console.log(`${prefix}${printTimeStamp()}Entering in "${propertyKey}" method`);
+                console.log(`${prefix}${printTimeStamp(new Date())}Entering in "${propertyKey}" method`);
             }
 
             // note usage of originalMethod here
@@ -55,12 +55,12 @@ export function LoggerMethod(loggerOptions?: LoggerMethodAnnotation): MethodDeco
 
             if(endTrace) {
                 let endTime = Date.now();
-                console.log(`${prefix}${printTimeStamp()}Exiting from "${propertyKey}" method`);
-                console.log(`${prefix}${printTimeStamp()}Time took: ${endTime - startTime}ms`);
+                console.log(`${prefix}${printTimeStamp(new Date())}Exiting from "${propertyKey}" method`);
+                console.log(`${prefix}${printTimeStamp(new Date())}Time took: ${endTime - startTime}ms`);
             }
 
             var r = JSON.stringify(result);
-            console.log(`${prefix}${printTimeStamp()}Call: ${propertyKey}(${a}) => ${r}`);
+            console.log(`${prefix}${printTimeStamp(new Date())}Call: ${propertyKey}(${a}) => ${r}`);
             return result;
         };
 
