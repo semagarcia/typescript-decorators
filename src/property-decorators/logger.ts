@@ -1,9 +1,21 @@
 export interface LoggerPropertyOptions {
+    /** Flag to log property accesses (getter) */
     getter?: boolean;
+
+    /** String to prepend to the log trace */
     prefix?: string;
+
+    /** Flag to log property assignments (setter) */
     setter?: boolean;
 }
 
+/**
+ * Decorator to log property accesses (getters and/or setters)
+ * 
+ * @export
+ * @param {LoggerPropertyOptions} [loggerOptions] 
+ * @returns 
+ */
 export function LoggerProperty(loggerOptions?: LoggerPropertyOptions) {
     const getter = (loggerOptions && 'getter' in loggerOptions) ? !!loggerOptions.getter : true;
     const prefix = (loggerOptions && loggerOptions.prefix) ? (loggerOptions.prefix + ' ') : '';
