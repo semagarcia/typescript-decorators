@@ -12,7 +12,7 @@ export interface LoggerClassAnnotation {
 }
 
 /**
- * 
+ * Logger decorator to trace class instantiation
  * 
  * @export
  * @returns {ClassDecorator} 
