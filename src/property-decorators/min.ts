@@ -4,7 +4,7 @@
  * @export
  * @param {number} minValue 
  * @param {boolean} [protect=false] When this flag is false (the default value), if the user tries to assign a lower
- *                  level, this decorator will set a null value, overriding the last right value assigned
+ *                  value, this decorator will set a null value, overriding the last right value assigned
  * @param {string} [throwError] 
  * @returns 
  */
