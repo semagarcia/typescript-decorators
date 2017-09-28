@@ -1,6 +1,6 @@
 import { Range } from '../../src/property-decorators/range';
 
-export class RangeClassExample {
+export class RangeExampleClass {
 
     @Range({ min: 0, max: 5 })
     positiveRange: number;
@@ -13,7 +13,7 @@ export class RangeClassExample {
 
 }
 
-let rangeExample = new RangeClassExample();
+let rangeExample = new RangeExampleClass();
 rangeExample.positiveRange = 2;
 console.log('\nResult of assign value 2 in range [0, 5] => ', rangeExample.positiveRange);
 rangeExample.positiveRange = -2;

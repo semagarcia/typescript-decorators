@@ -1,6 +1,6 @@
 import { Max } from '../../src/property-decorators/max';
 
-export class MaxClassExample {
+export class MaxExampleClass {
 
     @Max(-5)
     negativeValue: number = -5;
@@ -16,30 +16,30 @@ export class MaxClassExample {
 
 }
 
-let maxClassExample = new MaxClassExample();
+let maxClass = new MaxExampleClass();
 
 // Negative values
-maxClassExample.negativeValue = -5;
-console.log('\nResult of assign -5 to "negativeValue" property: ', maxClassExample.negativeValue);
-maxClassExample.negativeValue = -10;
-console.log('Result of assign -10 to "negativeValue" property: ', maxClassExample.negativeValue);
-maxClassExample.negativeValue = -4;
-console.log('Result of assign -4 to "negativeValue" property: ', maxClassExample.negativeValue);
+maxClass.negativeValue = -5;
+console.log('\nResult of assign -5 to "negativeValue" property: ', maxClass.negativeValue);
+maxClass.negativeValue = -10;
+console.log('Result of assign -10 to "negativeValue" property: ', maxClass.negativeValue);
+maxClass.negativeValue = -4;
+console.log('Result of assign -4 to "negativeValue" property: ', maxClass.negativeValue);
 
 // Positive values
-maxClassExample.positiveValue = 5;
-console.log('\nResult of assign 5 to "positiveValue" property: ', maxClassExample.positiveValue);
-maxClassExample.positiveValue = 0;
-console.log('Result of assign 0 to "positiveValue" property: ', maxClassExample.positiveValue);
-maxClassExample.positiveValue = 10;
-console.log('Result of assign 10 to "positiveValue" property: ', maxClassExample.positiveValue);
+maxClass.positiveValue = 5;
+console.log('\nResult of assign 5 to "positiveValue" property: ', maxClass.positiveValue);
+maxClass.positiveValue = 0;
+console.log('Result of assign 0 to "positiveValue" property: ', maxClass.positiveValue);
+maxClass.positiveValue = 10;
+console.log('Result of assign 10 to "positiveValue" property: ', maxClass.positiveValue);
 
 // Protected values
-maxClassExample.protectedValue = -3;
-console.log('\nResult of assign -3 to "protectedValue" property: ', maxClassExample.protectedValue);
-maxClassExample.protectedValue = 3;
-console.log('Result of assign 3 to "protectedValue" property: ', maxClassExample.protectedValue);
+maxClass.protectedValue = -3;
+console.log('\nResult of assign -3 to "protectedValue" property: ', maxClass.protectedValue);
+maxClass.protectedValue = 3;
+console.log('Result of assign 3 to "protectedValue" property: ', maxClass.protectedValue);
 
 // Throwing error
-maxClassExample.decimalValue = 5.3;
-console.log('\nResult of assign 5.3 to "decimalValue" property: ', maxClassExample.decimalValue);
+maxClass.decimalValue = 5.3;
+console.log('\nResult of assign 5.3 to "decimalValue" property: ', maxClass.decimalValue);
