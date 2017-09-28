@@ -63,5 +63,7 @@ export function StringLength(options: StringLengthOptions) {
 function checkOptionAnnotations(opts) {
     if(!opts || (!('max' in opts) && !('min' in opts))) {
         throw new Error('At least, this decorator needs either min or max length value!');
+    } else if('max' in opts && 'min' in opts && opts.min >= opts.max) {
+        throw new Error('The max value has to be greater than the min one!');
     }
 }
