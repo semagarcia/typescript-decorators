@@ -34,6 +34,7 @@ Lorem ipsum...
 Lorem ipsum...
 - Validators: 
    * [X] StringLength
+   * [ ] ArrayLength
    * [ ] readonly
    * [ ] readonly+callback
    * [ ] onAccess
@@ -59,6 +60,10 @@ Lorem ipsum...
    * [X] Range
 - [ ] NonWritable
 - [ ] NonConfigurable
+- Transformations:
+   * [ ] ToUppercase
+   * [ ] ToLowercase
+   * [ ] ToFixedLength
 
 ## Parameter decorators
 Lorem ipsum...
