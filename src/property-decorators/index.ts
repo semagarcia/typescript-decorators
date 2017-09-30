@@ -4,3 +4,4 @@ export * from './min';
 export * from './range';
 export * from './readonly';
 export * from './string-length';
+export * from './to-uppercase';
