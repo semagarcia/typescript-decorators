@@ -34,9 +34,7 @@ Lorem ipsum...
 Lorem ipsum...
 - Validators: 
    * [X] StringLength
-   * [ ] ArrayLength
-   * [ ] readonly
-   * [ ] readonly+callback
+   * [X] Readonly
    * [ ] onAccess
    * [ ] onUpdate
    * [ ] onNull
