@@ -12,6 +12,15 @@ describe('StringLength decorator', () => {
             }).toThrowError('At least, this decorator needs either min or max length value!');
         });
 
+        it('should throw an error when decorator is applied to non string property', () => {
+            class StringLengthClass {
+                @StringLength({ min: 2, max: 5 })
+                property: number;
+            };
+            let testClass = new StringLengthClass();
+            expect(() => testClass.property = 7).toThrowError('The value assigned is not an string!');
+        });
+
         it('should throw an error when min and max limits are not provided', () => {
             expect(() => {
                 class StringLengthClass {
