@@ -22,7 +22,7 @@ Lorem ipsum...
 ## Method decorators
 Lorem ipsum...
 - [X] Logger
-- [ ] deprecated
+- [X] Deprecated
 - [ ] Cache (w/o expiration)
 - [ ] Memoization
 - [ ] throttle(wait)
