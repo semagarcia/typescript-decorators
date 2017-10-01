@@ -13,7 +13,7 @@ export interface ToUppercaseOptions {
  * @param {ToUppercaseOptions} toUpperCaseOptions 
  * @returns 
  */
-export function ToUppercase(toUpperCaseOptions: ToUppercaseOptions) {
+export function ToUppercase(toUpperCaseOptions?: ToUppercaseOptions) {
     let opts = {
         capitalize: (toUpperCaseOptions && 'capitalize' in toUpperCaseOptions) ? !!toUpperCaseOptions.capitalize : false,
         useLocale: (toUpperCaseOptions && 'useLocale' in toUpperCaseOptions) ? !!toUpperCaseOptions.useLocale : false
@@ -29,6 +29,9 @@ export function ToUppercase(toUpperCaseOptions: ToUppercaseOptions) {
 
             // Setter
             set: (val: string) => {
+                if(typeof(val) !== 'string')
+                    throw new Error('The ToUppercase decorator have to be used over string object');
+
                 if(opts.capitalize) {
                     value = (opts.useLocale) 
                         ? val[0].toLocaleUpperCase() + val.slice(1)

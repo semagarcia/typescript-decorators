@@ -59,7 +59,7 @@ Lorem ipsum...
 - [ ] NonWritable
 - [ ] NonConfigurable
 - Transformations:
-   * [ ] ToUppercase
+   * [X] ToUppercase
    * [ ] ToLowercase
    * [ ] ToFixedLength
 
