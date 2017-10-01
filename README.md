@@ -60,7 +60,7 @@ Lorem ipsum...
 - [ ] NonConfigurable
 - Transformations:
    * [X] ToUppercase
-   * [ ] ToLowercase
+   * [X] ToLowercase
    * [ ] ToFixedLength
 
 ## Parameter decorators
