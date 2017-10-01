@@ -30,7 +30,7 @@ export function ToUppercase(toUpperCaseOptions?: ToUppercaseOptions) {
             // Setter
             set: (val: string) => {
                 if(typeof(val) !== 'string')
-                    throw new Error('The ToUppercase decorator have to be used over string object');
+                    throw new Error('The ToUppercase decorator has to be used over string object');
 
                 if(opts.capitalize) {
                     value = (opts.useLocale) 

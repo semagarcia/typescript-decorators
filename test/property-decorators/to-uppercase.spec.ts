@@ -7,7 +7,7 @@ describe('ToUppercase decorator', () => {
             @ToUppercase() myProp: number;
         }
         let testClass = new TestClassToUppercaseProperty();
-        expect(() => testClass.myProp = 7).toThrowError('The ToUppercase decorator have to be used over string object');
+        expect(() => testClass.myProp = 7).toThrowError('The ToUppercase decorator has to be used over string object');
     });
 
     it('should apply default behavior', () => {
