@@ -22,10 +22,9 @@ Lorem ipsum...
 ## Method decorators
 Lorem ipsum...
 - [X] Logger
+- [ ] deprecated
 - [ ] Cache (w/o expiration)
 - [ ] Memoization
-- [ ] deprecated
-- [ ] debounce(wait)
 - [ ] throttle(wait)
 - [ ] profile (internamente, console.profile y console.profileEnd)
 - [ ] time (internamente, console.time y console.timeEnd)
@@ -35,27 +34,11 @@ Lorem ipsum...
 - Validators: 
    * [X] StringLength
    * [X] Readonly
-   * [ ] onAccess
-   * [ ] onUpdate
-   * [ ] onNull
-   * [ ] type verification
-   * [ ] contains('string')
-   * [ ] isInt
-   * [ ] isDate
-   * [ ] isEmail
-   * [ ] eachIsString (para arrays)
-   * [ ] maxLength(size, eachType)
-   * [ ] isAfter(date)
-   * [ ] isBefore(date)
-   * [ ] isAlphanumeric
-   * [ ] isBoolean
-   * [ ] isISBN
-   * [ ] isLowercase
-   * [ ] isNull
-   * [ ] isUppercase
    * [X] Max
    * [X] Min
    * [X] Range
+   * [ ] onAccess
+   * [ ] onUpdate
 - [ ] NonWritable
 - [ ] NonConfigurable
 - Transformations:
