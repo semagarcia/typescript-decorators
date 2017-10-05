@@ -1,8 +1,11 @@
 export interface CacheableAnnotation {
-
+    stats?: boolean;
+    platform?: 'browser' | 'nodejs';
+    storage?: 'memory' | 'localStorage' | 'sessionStorage';
 }
 
 export function Cacheable(options?: CacheableAnnotation) {
+    var memory = {};
     return function(target: any, propertyKey: string | symbol, descriptor: PropertyDescriptor) {
         // save a reference to the original method this way we keep the values currently in the
         // descriptor and don't overwrite what another decorator might have done to the descriptor.
@@ -10,23 +13,23 @@ export function Cacheable(options?: CacheableAnnotation) {
             descriptor = Object.getOwnPropertyDescriptor(target, propertyKey);
         }
 
-        // Editing the descriptor/value parameter
-        /*var originalMethod = descriptor.value;
-        descriptor.value = function () {
-            var args = [];
-            for (var _i = 0; _i < arguments.length; _i++) {
+        let originalMethod = descriptor.value;
+        descriptor.value = function() {
+            let args = [];
+            for (let _i = 0; _i < arguments.length; _i++) {
                 args[_i - 0] = arguments[_i];
             }
-            var a = args.map(function (a) { return JSON.stringify(a); }).join();
 
-
-            // note usage of originalMethod here
-            var result = originalMethod.apply(this, args);
-            var r = JSON.stringify(result);
-            console.log(`${prefix}${printTimeStamp(new Date())}Call: ${propertyKey}(${a}) => ${r}`);
-            return result;
-        };*/
-        console.log('dv: ', descriptor);
+            if(memory[args.toString()]) {
+                console.log('Cache entry found!');
+                return memory[args.toString()];
+            } else {
+                console.log('Cache entry not found!');
+                let result = originalMethod.apply(this, args);
+                memory[args.toString()] = result;
+                return result;
+            }
+        };
 
         // return edited descriptor as opposed to overwriting the descriptor
         return descriptor;
