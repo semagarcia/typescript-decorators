@@ -23,7 +23,7 @@ Lorem ipsum...
 Lorem ipsum...
 - [X] Logger
 - [X] Deprecated
-- [ ] Cache (w/o expiration)
+- [X] Cacheable
 - [ ] Memoization
 - [ ] throttle(wait)
 - [ ] profile (internamente, console.profile y console.profileEnd)
