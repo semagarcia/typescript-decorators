@@ -31,6 +31,17 @@ Lorem ipsum...
 
 ## Property decorators
 Lorem ipsum...
+- Formats:
+   * [ ] Email
+   * [ ] Url
+- Maths:
+   * [ ] Round
+- [ ] NonWritable
+- [ ] NonConfigurable
+- Transformations:
+   * [X] ToUppercase
+   * [X] ToLowercase
+   * [ ] ToFixedLength
 - Validators: 
    * [X] StringLength
    * [X] Readonly
@@ -39,15 +50,6 @@ Lorem ipsum...
    * [X] Range
    * [ ] onAccess
    * [ ] onUpdate
-- Formats:
-   * [ ] Email
-   * [ ] Url
-- [ ] NonWritable
-- [ ] NonConfigurable
-- Transformations:
-   * [X] ToUppercase
-   * [X] ToLowercase
-   * [ ] ToFixedLength
 
 ## Parameter decorators
 Lorem ipsum...
