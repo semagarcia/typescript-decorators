@@ -39,6 +39,9 @@ Lorem ipsum...
    * [X] Range
    * [ ] onAccess
    * [ ] onUpdate
+- Formats:
+   * [ ] Email
+   * [ ] Url
 - [ ] NonWritable
 - [ ] NonConfigurable
 - Transformations:
