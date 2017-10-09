@@ -1,3 +1,4 @@
+export * from './email';
 export * from './logger';
 export * from './max';
 export * from './min';
