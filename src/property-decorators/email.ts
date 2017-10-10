@@ -1,11 +1,21 @@
 export interface EmailOptions {
+    /** */
     protect?: boolean;
+
+    /** */
     throwError?: boolean;
 }
 
+/**
+ * 
+ * 
+ * @export
+ * @param {EmailOptions} [emailOptions] 
+ * @returns 
+ */
 export function Email(emailOptions?: EmailOptions) {
-    const protect = (emailOptions && emailOptions.protect) ? emailOptions.protect : true;
-    const throwError = (emailOptions && emailOptions.throwError) ? emailOptions.throwError : false;
+    const protect = (emailOptions && 'protect' in emailOptions) ? emailOptions.protect : true;
+    const throwError = (emailOptions && 'throwError' in emailOptions) ? emailOptions.throwError : false;
     const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     return function(target: Object, propertyKey: string | symbol) {
@@ -18,7 +28,7 @@ export function Email(emailOptions?: EmailOptions) {
             // Setter
             set: (val) => {
                 if(regex.test(val)) {
-                    val = value;
+                    value = val;
                 } else {
                     if(!protect) value = null;
                     if(throwError) throw new Error('Invalid email address format');
