@@ -8,8 +8,8 @@ describe('Email decorator', () => {
         }
         let testClass = new EmailTestClass();
         let validAddress = 'a.a@a.com';
-        testClass.emailAddress = 'a.a@a.com';
-        expect(testClass.emailAddress).toEqual('a.a@a.com');
+        testClass.emailAddress = validAddress;
+        expect(testClass.emailAddress).toEqual(validAddress);
         testClass.emailAddress = 'a.@a.com';
         expect(testClass.emailAddress).toEqual(validAddress);
     });
@@ -20,6 +20,18 @@ describe('Email decorator', () => {
         }
         let testClass = new EmailTestClass();
         expect(() => testClass.emailAddress = 'a.@a.com').toThrowError();
+    });
+
+    it('should not prevent the last value assigned', () => {
+        class EmailTestClass {
+            @Email({ protect: false }) emailAddress: string;
+        }
+        let testClass = new EmailTestClass();
+        let validAddress = 'a.a@a.com';
+        testClass.emailAddress = validAddress;
+        expect(testClass.emailAddress).toEqual(validAddress);
+        testClass.emailAddress = 'a.@a.com';
+        expect(testClass.emailAddress).toBeNull();
     });
 
 });
