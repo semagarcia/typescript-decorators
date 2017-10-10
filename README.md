@@ -32,7 +32,7 @@ Lorem ipsum...
 ## Property decorators
 Lorem ipsum...
 - Formats:
-   * [ ] Email
+   * [X] Email
    * [ ] Url
 - Maths:
    * [ ] Round
