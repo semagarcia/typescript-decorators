@@ -34,6 +34,8 @@ Lorem ipsum...
 - Formats:
    * [X] Email
    * [ ] Url
+   * [ ] UUID
+   * [ ] ISBN
 - Maths:
    * [ ] Round
 - [ ] NonWritable
