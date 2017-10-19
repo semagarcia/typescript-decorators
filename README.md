@@ -36,6 +36,7 @@ Lorem ipsum...
    * [ ] Url
    * [ ] UUID
    * [ ] ISBN
+   * [ ] CreditCard
 - Maths:
    * [ ] Round
 - [ ] NonWritable
