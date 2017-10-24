@@ -37,6 +37,7 @@ Lorem ipsum...
    * [ ] UUID
    * [ ] ISBN
    * [ ] CreditCard
+   * [ ] StringDate
 - Maths:
    * [ ] Round
 - [ ] NonWritable
