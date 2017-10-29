@@ -46,6 +46,8 @@ Lorem ipsum...
    * [X] ToUppercase
    * [X] ToLowercase
    * [ ] ToFixedLength
+- Utils:
+   * [ ] Promisify
 - Validators: 
    * [X] StringLength
    * [X] Readonly
