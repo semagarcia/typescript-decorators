@@ -48,6 +48,7 @@ Lorem ipsum...
    * [ ] ToFixedLength
 - Utils:
    * [ ] Promisify
+   * [ ] InThread
 - Validators: 
    * [X] StringLength
    * [X] Readonly
