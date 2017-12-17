@@ -12,9 +12,6 @@ Set of common and userful Typescript decorators.
 ## Educational related repository project
 If you want to know more about TypeScript decorators, you can check [this repository](https://github.com/semagarcia/educational-typescript-decorators) to go deeper.
 
-# LoD (List-of-Decorators)
-Lorem Ipsum
-
 ## Class decorators
 Lorem ipsum...
 - [X] Logger
