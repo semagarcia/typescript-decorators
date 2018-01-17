@@ -37,7 +37,7 @@ Lorem ipsum...
    * [ ] StringDate
 - Maths:
    * [ ] Round
-- [ ] NonWritable
+- [ ] NonWritable (freeze)
 - [ ] NonConfigurable
 - Transformations:
    * [X] ToUppercase
