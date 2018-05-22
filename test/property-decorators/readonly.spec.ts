@@ -13,7 +13,7 @@ describe('ReadOnly decorator', () => {
     it('should throw an error when no mandatory value has been provided', () => {
         expect(() => {
             class TestClassReadOnlyProperty {
-                @ReadOnly({ throwError: true }) myProp: any;
+                @ReadOnly({ value: null, throwError: true }) myProp: any;
             }
         }).toThrowError('Value has to be provided!');
     });
