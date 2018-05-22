@@ -1,25 +1,25 @@
-module.exports = function(config) {
+module.exports = function (config) {
     config.set({
-        basePath: "./",
 
-        browsers: [
-            //"Chrome",
-            "ChromeHeadless"
-        ],
+        // base path that will be used to resolve all patterns (eg. files, exclude)
+        basePath: '',
 
+        // frameworks to use
+        // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+        frameworks: ['jasmine', 'karma-typescript'],
+
+        // list of files / patterns to load in the browser
         files: [
             // Decorators (and tests if they are in this folder)
-            { pattern: "src/**/*.ts" },
+            { pattern: "src/**/*.ts" },  // "src/**/*.+(js|ts)"
 
             // Tests in its own folder. If the tests would be placed in the src folder (next to source files)
             // this line should be commented (it's enough with the previous one pattern)
             { pattern: "test/**/*.ts" }
         ],
 
-        frameworks: [
-            "jasmine", 
-            "karma-typescript"
-        ],
+        // list of files / patterns to exclude
+        exclude: [],
 
         karmaTypescriptConfig: {
             tsconfig: "./tsconfig.test.json",
@@ -30,6 +30,11 @@ module.exports = function(config) {
             coverageOptions: {
                 // Exclude all .d.ts, .spec.ts and index.ts for coverage report
                 exclude: [/\.(d|spec)\.ts$/i, /index\.ts$/i]
+            },
+            reports: {
+                // Define a reporter to see through console, after the test execution, a coverage summary
+                'html': 'coverage',
+                'text-summary': null
             },
             threshold: {
                 // Computed over whole source code base, it means, over the total/global
@@ -56,26 +61,10 @@ module.exports = function(config) {
                     }
                 }
             },
-            reports: {
-                // Define a reporter to see through console, after the test execution, a coverage summary
-                'html': 'coverage',
-                'text-summary': null
-            }
         },
 
-        logLevel: config.LOG_INFO,
-
-        plugins: [
-            "karma-typescript",
-            "karma-jasmine",
-            "karma-mocha-reporter",
-            "karma-jasmine-html-reporter",
-            "karma-spec-reporter",
-            "karma-chrome-launcher"
-        ],
-
-        port: 9876,
-
+        // preprocess matching files before serving them to the browser
+        // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
             "**/*.ts": ["karma-typescript"]
         },
@@ -87,8 +76,45 @@ module.exports = function(config) {
             }
         },
 
-        reporters: ["mocha", "karma-typescript"],  // progress, dots, coverage, html, mocha, kjhtml
+        // test results reporter to use
+        // possible values: 'dots', 'progress'
+        // available reporters: https://npmjs.org/browse/keyword/karma-reporter
+        reporters: ['progress', 'karma-typescript'],
 
-        singleRun: true
+        plugins: [
+            "karma-typescript",
+            "karma-jasmine",
+            "karma-mocha-reporter",
+            "karma-jasmine-html-reporter",
+            "karma-spec-reporter",
+            "karma-chrome-launcher"
+        ],
+
+        // web server port
+        port: 9876,
+
+        // enable / disable colors in the output (reporters and logs)
+        colors: true,
+
+        // level of logging
+        // config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+        logLevel: config.LOG_INFO,
+
+        // enable / disable watching file and executing tests whenever any file changes
+        autoWatch: false,
+
+        // start these browsers
+        // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+        browsers: [
+            'ChromeHeadless'
+        ],
+
+        // Continuous Integration mode
+        // if true, Karma captures browsers, runs the tests and exits
+        singleRun: true,
+
+        // Concurrency level
+        // how many browser should be started simultaneous
+        concurrency: Infinity
     });
-};
+}
