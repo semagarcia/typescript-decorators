@@ -5,7 +5,7 @@ describe('Range decorator', () => {
     it('should throw an error when no annotations are provided', () => {
         expect(() => {
             class TestClassRangeValue {
-                @Range()  // This will throw a TypeScript error (obviously)
+                @Range(null)  // This will throw a TypeScript error (obviously)
                 myNumber: number;
             }
         }).toThrowError('No range options provided');
