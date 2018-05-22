@@ -11,7 +11,7 @@
     "build": "npm run clean && npm run transpile && npm run example-executor",
     "example-executor": "node example-executor.js",
     "transpile": "./node_modules/.bin/tsc",
-    "clean": "rimraf -rf dist dist-examples coverage",
+    "clean": "rimraf -rf dist coverage",
     "test": "./node_modules/karma/bin/karma start karma.conf.js"
   },
   "repository": {
@@ -23,17 +23,13 @@
   "bugs": {
     "url": "https://github.com/semagarcia/typescript-decorators/issues"
   },
-  "@types/mocha": "^2.2.43",
   "homepage": "https://github.com/semagarcia/typescript-decorators#readme",
   "devDependencies": {
-    "@types/chai": "^4.0.4",
     "@types/jasmine": "^2.8.7",
     "@types/node": "^8.0.28",
-    "chai": "^4.1.2",
     "jasmine": "^3.1.0",
     "jasmine-core": "^3.1.0",
     "karma": "^2.0.0",
-    "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-cli": "^1.0.1",
     "karma-jasmine": "^1.1.1",
@@ -43,8 +39,6 @@
     "karma-spec-reporter": "0.0.31",
     "karma-typescript": "^3.0.12",
     "karma-typescript-es6-transform": "^1.0.3",
-    "mocha": "^3.5.3",
-    "puppeteer": "^1.4.0",
     "rimraf": "^2.6.2",
     "ts-node": "^5.0.0",
     "typescript": "^2.8.3"
