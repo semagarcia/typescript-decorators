@@ -20,7 +20,7 @@ export interface ReadOnlyOptions {
  * @returns 
  */
 export function ReadOnly(options: ReadOnlyOptions) {
-    if(!options || !('value' in options))
+    if(!options || !('value' in options) || !options.value)
         throw new Error('Value has to be provided!')
     return function(target: Object, propertyKey: string | symbol) {
         let value = (typeof(options.value) === 'function') ? options.value() : options.value;
