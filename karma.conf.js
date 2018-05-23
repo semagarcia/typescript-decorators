@@ -32,9 +32,15 @@ module.exports = function (config) {
                 exclude: [/\.(d|spec)\.ts$/i, /index\.ts$/i]
             },
             reports: {
+                // Define a reporter to generate an XML file
+                /*"cobertura": {
+                    "directory": "coverage",
+                    "filename": "cobertura/coverage.xml"
+                },*/
+
                 // Define a reporter to see through console, after the test execution, a coverage summary
                 'html': 'coverage',
-                'text-summary': null
+                'text-summary': ''
             },
             threshold: {
                 // Computed over whole source code base, it means, over the total/global
@@ -51,13 +57,13 @@ module.exports = function (config) {
                     functions: -10,
                     lines: 70,
                     overrides: {
-                    // Overrides for specific files
-                    'src/services/offline-manager.service.ts': {
-                        statements: 60,
-                        branches: 60,
-                        functions: -40,
-                        lines: 60
-                    }
+                        // Overrides for specific files
+                        'src/services/offline-manager.service.ts': {
+                            statements: 60,
+                            branches: 60,
+                            functions: -40,
+                            lines: 60
+                        }
                     }
                 }
             },
@@ -69,13 +75,6 @@ module.exports = function (config) {
             "**/*.ts": ["karma-typescript"]
         },
 
-        remapIstanbulReporter: {
-            reports: {
-                html: 'coverage',
-                lcovonly: './coverage/coverage.lcov'
-            }
-        },
-
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
@@ -84,10 +83,10 @@ module.exports = function (config) {
         plugins: [
             "karma-typescript",
             "karma-jasmine",
-            "karma-mocha-reporter",
+            "karma-chrome-launcher",
+            "karma-remap-istanbul",
             "karma-jasmine-html-reporter",
-            "karma-spec-reporter",
-            "karma-chrome-launcher"
+            "karma-spec-reporter"
         ],
 
         // web server port
