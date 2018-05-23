@@ -10,7 +10,7 @@ export interface EmailOptions {
 }
 
 /**
- * Decorator for guarantee the email format
+ * Decorator for guarantee the email format in a property
  * 
  * @param {EmailOptions} [emailOptions] Configuration object for Email decorator
  * @returns {PropertyDecorator}

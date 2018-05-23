@@ -2,10 +2,10 @@
  * Interface for ReadOnly decorator
  */
 export interface ReadOnlyOptions {
-    /** */
+    /** Value to assign */
     value: any;
 
-    /** */
+    /** Flag to throw or not an error */
     throwError?: boolean;
 }
 

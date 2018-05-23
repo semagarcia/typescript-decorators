@@ -5,16 +5,16 @@ export interface RangeOptions {
     //leftOpen?: boolean;   // ToDo
     //rightOpen?: boolean;  // ToDo
 
-    /** */
+    /** Max range value allowed (included) */
     max: number;
 
-    /** */
+    /** Main range value allowed (included) */
     min: number;
 
-    /** */
+    /** Flag to protect the value assigned or not */
     protect?: boolean;
 
-    /** */
+    /** Flag to throw an error when an invalid value is been asigned */
     throwOutOfRange?: boolean;
 }
 

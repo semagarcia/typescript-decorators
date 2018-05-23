@@ -1,10 +1,11 @@
 /**
+ * Decorator to set and guarantee a maximum value for a property
  * 
- * 
- * @param {number} [minValue] 
- * @param {boolean} [protect=false] When this flag is false (the default value), if the user tries to assign a lower
- *                  value, this decorator will set a null value, overriding the last right value assigned
- * @param {string} [throwError] 
+ * @param {number} [minValue] The minimum value allowed
+ * @param {boolean} [protect=false] When this flag is false (the default value), if the user 
+ * tries to assign a lower value, this decorator will set a null value, overriding the last 
+ * right value assigned
+ * @param {string} [throwError] Message to throw when the constraint is not satisfied
  * @returns {PropertyDecorator}
  */
 export function Min(minValue: number, protect: boolean = false, throwError?: string): PropertyDecorator {

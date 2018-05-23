@@ -1,11 +1,11 @@
 /**
+ * Decorator to set and guarantee a maximum value for a property
  * 
- * 
- * @export
- * @param {number} maxValue 
- * @param {boolean} [protect=false] When this flag is false (the default value), if the user tries to assign a higher
- *                  level, this decorator will set a null value, overriding the last right value assigned
- * @param {string} [throwError] 
+ * @param {number} [maxValue] The maximum value allowed
+ * @param {boolean} [protect=false] When this flag is false (the default value), if the user tries 
+ * to assign a higher level, this decorator will set a null value, overriding the last right value 
+ * assigned
+ * @param {string} [throwError] Message to throw when the constraint is not satisfied
  * @returns {PropertyDecorator}
  */
 export function Max(maxValue: number, protect: boolean = false, throwError?: string): PropertyDecorator {
