@@ -1,8 +1,5 @@
 /**
- * Interface for ReadOnlyOptions decorator annotation
- * 
- * @export
- * @interface ReadOnlyOptions
+ * Interface for ReadOnly decorator
  */
 export interface ReadOnlyOptions {
     /** */
@@ -13,13 +10,12 @@ export interface ReadOnlyOptions {
 }
 
 /**
- * Decorator to prevent to be writable
+ * Decorator to protect a property, preventing to be writable
  * 
- * @export
- * @param {ReadOnlyOptions} options 
- * @returns 
+ * @param {ReadOnlyOptions} [options] Decorator configuration object 
+ * @returns {PropertyDecorator}
  */
-export function ReadOnly(options: ReadOnlyOptions) {
+export function ReadOnly(options: ReadOnlyOptions): PropertyDecorator {
     if(!options || !('value' in options) || !options.value)
         throw new Error('Value has to be provided!')
     return function(target: Object, propertyKey: string | symbol) {

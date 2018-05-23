@@ -1,16 +1,18 @@
+/**
+ * Object to configure ToLowercase decorator
+ */
 export interface ToLowercaseOptions {
-    /** */
+    /** Flag to determine if locale should be used */
     useLocale?: boolean;
 }
 
 /**
  * Decorator to transform a string to uppercase with options (capitalize and/or using locale)
  * 
- * @export
- * @param {ToUppercaseOptions} toUpperCaseOptions 
- * @returns 
+ * @param {ToUppercaseOptions} [toUpperCaseOptions] 
+ * @returns {PropertyDecorator}
  */
-export function ToLowercase(toLowerCaseOptions?: ToLowercaseOptions) {
+export function ToLowercase(toLowerCaseOptions?: ToLowercaseOptions): PropertyDecorator {
     let useLocale = (toLowerCaseOptions && 'useLocale' in toLowerCaseOptions) ? !!toLowerCaseOptions.useLocale : false;
 
     // Decorator

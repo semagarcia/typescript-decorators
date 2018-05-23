@@ -6,9 +6,9 @@
  * @param {boolean} [protect=false] When this flag is false (the default value), if the user tries to assign a higher
  *                  level, this decorator will set a null value, overriding the last right value assigned
  * @param {string} [throwError] 
- * @returns 
+ * @returns {PropertyDecorator}
  */
-export function Max(maxValue: number, protect: boolean = false, throwError?: string) {
+export function Max(maxValue: number, protect: boolean = false, throwError?: string): PropertyDecorator {
     return function(target: Object, propertyKey: string | symbol) {
         let value = target[propertyKey];
         Reflect.deleteProperty[propertyKey];

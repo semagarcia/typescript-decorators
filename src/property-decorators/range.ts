@@ -1,9 +1,20 @@
+/**
+ * Options for Range decorator
+ */
 export interface RangeOptions {
     //leftOpen?: boolean;   // ToDo
     //rightOpen?: boolean;  // ToDo
+
+    /** */
     max: number;
+
+    /** */
     min: number;
+
+    /** */
     protect?: boolean;
+
+    /** */
     throwOutOfRange?: boolean;
 }
 
@@ -11,10 +22,10 @@ export interface RangeOptions {
  * Decorator to assert that a property will only have a value between a min and a max value
  * 
  * @export
- * @param {RangeOptions} rangeOptions 
- * @returns 
+ * @param {RangeOptions} [rangeOptions] Decorator configuration object 
+ * @returns {PropertyDecorator}
  */
-export function Range(rangeOptions: RangeOptions) {
+export function Range(rangeOptions: RangeOptions): PropertyDecorator {
     // Check conditions; in case of error an exception will be thrown
     checkRangeOptions(rangeOptions);
 

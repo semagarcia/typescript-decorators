@@ -1,5 +1,8 @@
 import { printTimeStamp } from './../utils';
 
+/**
+ * Options for LoggerClass decorator
+ */
 export interface LoggerClassAnnotation {
     /** Message to write in each trace */
     messageOnLog?: string;
@@ -14,7 +17,7 @@ export interface LoggerClassAnnotation {
 /**
  * Logger decorator to trace class instantiation
  * 
- * @export
+ * @param {LoggerClassAnnotation} [loggerOptions] Options for configuring decorator
  * @returns {ClassDecorator} 
  */
 export function LoggerClass(loggerOptions: LoggerClassAnnotation = {}): ClassDecorator {

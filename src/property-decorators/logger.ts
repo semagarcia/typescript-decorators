@@ -1,3 +1,6 @@
+/**
+ * Options for LoggerProperty decorator
+ */
 export interface LoggerPropertyOptions {
     /** Flag to log property accesses (getter) */
     getter?: boolean;
@@ -12,11 +15,10 @@ export interface LoggerPropertyOptions {
 /**
  * Decorator to log property accesses (getters and/or setters)
  * 
- * @export
- * @param {LoggerPropertyOptions} [loggerOptions] 
- * @returns 
+ * @param {LoggerPropertyOptions} [loggerOptions] Decorator configuration object
+ * @returns {PropertyDecorator}
  */
-export function LoggerProperty(loggerOptions?: LoggerPropertyOptions) {
+export function LoggerProperty(loggerOptions?: LoggerPropertyOptions): PropertyDecorator {
     const getter = (loggerOptions && 'getter' in loggerOptions) ? !!loggerOptions.getter : true;
     const prefix = (loggerOptions && loggerOptions.prefix) ? (loggerOptions.prefix + ' ') : '';
     const setter = (loggerOptions && 'setter' in loggerOptions) ? !!loggerOptions.setter : true;

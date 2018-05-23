@@ -1,19 +1,21 @@
+/**
+ * Options for Email decorator
+ */
 export interface EmailOptions {
-    /** */
+    /** Flag to determine if the previous value should be protected or not */
     protect?: boolean;
 
-    /** */
+    /** Flag to determine if an error should be thrown when an invalid email is assigned */
     throwError?: boolean;
 }
 
 /**
+ * Decorator for guarantee the email format
  * 
- * 
- * @export
- * @param {EmailOptions} [emailOptions] 
- * @returns 
+ * @param {EmailOptions} [emailOptions] Configuration object for Email decorator
+ * @returns {PropertyDecorator}
  */
-export function Email(emailOptions?: EmailOptions) {
+export function Email(emailOptions?: EmailOptions): PropertyDecorator {
     const protect = (emailOptions && 'protect' in emailOptions) ? emailOptions.protect : true;
     const throwError = (emailOptions && 'throwError' in emailOptions) ? emailOptions.throwError : false;
     const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

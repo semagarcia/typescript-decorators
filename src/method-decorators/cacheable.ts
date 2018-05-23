@@ -1,10 +1,24 @@
+/**
+ * Options for Cacheable decorator
+ */
 export interface CacheableAnnotation {
-    stats?: boolean;
-    platform?: 'browser' | 'nodejs';
-    storage?: 'memory' | 'localStorage' | 'sessionStorage';
+    /** Flag to show cache stats */
+    //stats?: boolean;
+
+    /** Selects the platform where the cache will be executed (browser or nodejs) */
+    //platform?: 'browser' | 'nodejs';
+
+    /** Selects how the cache will be implemented; by default "memory" is used */
+    //storage?: 'memory' | 'localStorage' | 'sessionStorage';
 }
 
-export function Cacheable(options?: CacheableAnnotation) {
+/**
+ * Decorator for caching methods
+ * 
+ * @param {CacheableAnnotation} [options] Options for configuring decorator 
+ * @returns {MethodDecorator}
+ */
+export function Cacheable(options?: CacheableAnnotation): MethodDecorator {
     var memory = {};
     return function(target: any, propertyKey: string | symbol, descriptor: PropertyDescriptor) {
         // save a reference to the original method this way we keep the values currently in the

@@ -1,9 +1,8 @@
+/**
+ * Options for ISBN decorator
+ */
 export interface IsbnOptions {
-    /** */
-    protect?: boolean;
 
-    /** */
-    throwError?: boolean;
 }
 
 /**
@@ -13,9 +12,11 @@ export interface IsbnOptions {
  * @param {IsbnOptions} [isbnOptions] 
  * @returns 
  */
-export function ISBN(isbnOptions?: IsbnOptions) {
+export function ISBN(isbnOptions?: IsbnOptions): PropertyDecorator {
     
-
+    /**
+     * 
+     */
     return function(target: Object, propertyKey: string | symbol) {
         let value = target[propertyKey];
         Reflect.deleteProperty[propertyKey];

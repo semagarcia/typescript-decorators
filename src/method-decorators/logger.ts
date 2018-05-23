@@ -1,5 +1,8 @@
 import { printTimeStamp } from './../utils';
 
+/**
+ * Options for LoggerMethod decorator
+ */
 export interface LoggerMethodAnnotation {
     /** Flag to trace the beginning of decorated method */
     entryTrace?: boolean;
@@ -17,8 +20,7 @@ export interface LoggerMethodAnnotation {
 /**
  * Logger decorator to trace the beginning and/or the end of a method
  * 
- * @export
- * @param {*} loggerOptions 
+ * @param {LoggerMethodAnnotation} [loggerOptions] Configuration object for LoggerMethod decorator
  * @returns {MethodDecorator} 
  */
 export function LoggerMethod(loggerOptions?: LoggerMethodAnnotation): MethodDecorator {

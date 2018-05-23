@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 export interface UUIDOptions {
     /** */
     protect?: boolean;
@@ -9,13 +12,14 @@ export interface UUIDOptions {
 /**
  * 
  * 
- * @export
  * @param {UUIDOptions} [uuidOptions] 
  * @returns 
  */
-export function UUID(uuidOptions?: UUIDOptions) {
+export function UUID(uuidOptions?: UUIDOptions): PropertyDecorator {
     
-
+    /**
+     * 
+     */
     return function(target: Object, propertyKey: string | symbol) {
         let value = target[propertyKey];
         Reflect.deleteProperty[propertyKey];

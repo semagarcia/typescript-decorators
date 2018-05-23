@@ -1,31 +1,27 @@
 /**
- * Interface for StringLength decorator annotations
- * 
- * @export
- * @interface StringLengthOptions
+ * Interface for StringLength decorator
  */
 export interface StringLengthOptions {
-    /** */
+    /** The minimun string length (optional) */
     min?: number;
 
-    /** */
+    /** The maximum string length (optional) */
     max?: number;
 
-    /** */
+    /** If this flag is truly, the property could take null values */
     allowNulls?: boolean;
 
-    /** */
+    /** Flag to throw an error if the length constraints are not satisfied */
     throwError?: boolean;
 }
 
 /**
  * Decorator to assert either the max or the min length for a string class property
  * 
- * @export
- * @param {StringLengthOptions} options 
- * @returns 
+ * @param {StringLengthOptions} [options] Configuration object for the decorator
+ * @returns {PropertyDecorator}
  */
-export function StringLength(options: StringLengthOptions) {
+export function StringLength(options: StringLengthOptions): PropertyDecorator {
     checkOptionAnnotations(options);
 
     return function(target: Object, propertyKey: string | symbol) {
