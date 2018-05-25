@@ -8,10 +8,11 @@
     "example": "examples"
   },
   "scripts": {
-    "build": "npm run clean && npm run transpile && npm run example-executor",
-    "example-executor": "node example-executor.js",
+    "build": "npm run clean && npm run transpile && npm run test",
+    "example-executor": "npm run clean && npm run transpile && node example-executor.js",
     "transpile": "./node_modules/.bin/tsc",
     "clean": "rimraf -rf dist coverage",
+    "start": "npm run example-executor",
     "test": "./node_modules/karma/bin/karma start karma.conf.js"
   },
   "repository": {
