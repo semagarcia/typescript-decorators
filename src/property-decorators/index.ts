@@ -1,5 +1,5 @@
 export * from './email';
-export * from './isbn';
+export * from './credit-card';
 export * from './logger';
 export * from './max';
 export * from './min';
