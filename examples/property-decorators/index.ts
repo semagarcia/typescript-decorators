@@ -7,3 +7,4 @@ export * from './readonly.example';
 export * from './string-length.example';
 export * from './to-lowercase.example';
 export * from './to-uppercase.example';
+export * from './uuid.example';
