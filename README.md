@@ -1,5 +1,7 @@
-# typescript-decorators
+# Typescript Decorator Library
 Set of common and userful Typescript decorators.
+
+[![Build Status](https://travis-ci.com/semagarcia/typescript-decorators.svg?branch=master)](https://travis-ci.com/semagarcia/typescript-decorators)
 
 ### Table of Contents
 - [Educational related repository project](#educational-related-repository-project)
