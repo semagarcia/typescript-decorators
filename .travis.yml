@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - node # descargará la última versión de node
+before_script:
+  - npm install
+  - npm run transpile
+script:
+  - npm run test
