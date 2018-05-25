@@ -84,7 +84,6 @@ module.exports = function (config) {
             "karma-typescript",
             "karma-jasmine",
             "karma-chrome-launcher",
-            "karma-remap-istanbul",
             "karma-jasmine-html-reporter",
             "karma-spec-reporter"
         ],
