@@ -11,3 +11,5 @@ before_script:
   - npm run transpile
 script:
   - npm run test
+after_success:
+  - npm run coveralls
