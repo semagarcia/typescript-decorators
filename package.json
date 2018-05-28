@@ -13,7 +13,8 @@
     "transpile": "./node_modules/.bin/tsc",
     "clean": "rimraf -rf dist coverage",
     "start": "npm run example-executor",
-    "test": "./node_modules/karma/bin/karma start karma.conf.js"
+    "test": "./node_modules/karma/bin/karma start karma.conf.js",
+    "coveralls": "cat ./coverage/lcov/lcov.info | ./node_modules/.bin/coveralls"
   },
   "repository": {
     "type": "git",
@@ -45,6 +46,7 @@
     "typescript": "^2.8.3"
   },
   "dependencies": {
+    "coveralls": "^3.0.1",
     "figlet": "^1.2.0",
     "inquirer": "^3.3.0",
     "reflect-metadata": "^0.1.10"
