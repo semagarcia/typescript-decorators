@@ -38,6 +38,13 @@ module.exports = function (config) {
                     "filename": "cobertura/coverage.xml"
                 },*/
 
+                //
+                'lcovonly': {
+                    "directory": "coverage",
+                    "subdirectory": "lcov",
+                    "filename": "lcov.info"
+                },
+
                 // Define a reporter to see through console, after the test execution, a coverage summary
                 'html': 'coverage',
                 'text-summary': ''
