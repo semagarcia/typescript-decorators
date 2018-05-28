@@ -3,10 +3,10 @@ Set of common and userful Typescript decorators.
 
 ### Current project health / status
 
-| Branch | Develop Branch |
-|---|---|
-| Master | [![Build Status](https://travis-ci.com/semagarcia/typescript-decorators.svg?branch=master)](https://travis-ci.com/semagarcia/typescript-decorators) |
-| Dev | [![Build Status](https://travis-ci.com/semagarcia/typescript-decorators.svg?branch=dev)](https://travis-ci.com/semagarcia/typescript-decorators) |
+| Branch | Build Status | Coverage Status |
+|---|---|---|
+| Master | [![Build Status](https://travis-ci.com/semagarcia/typescript-decorators.svg?branch=master)](https://travis-ci.com/semagarcia/typescript-decorators) | [![Coverage Status](https://coveralls.io/repos/github/semagarcia/typescript-decorators/badge.svg?branch=dev)](https://coveralls.io/github/semagarcia/typescript-decorators?branch=master) |
+| Dev | [![Build Status](https://travis-ci.com/semagarcia/typescript-decorators.svg?branch=dev)](https://travis-ci.com/semagarcia/typescript-decorators) | [![Coverage Status](https://coveralls.io/repos/github/semagarcia/typescript-decorators/badge.svg?branch=dev)](https://coveralls.io/github/semagarcia/typescript-decorators?branch=dev) |
 
 ## Table of Contents
 - [Educational related repository project](#educational-related-repository-project)
